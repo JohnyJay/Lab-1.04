@@ -6,10 +6,34 @@ public class Main {
     public static void main(String[] args){
         // TASK ONE
         int difference = 0;
-        int[] sampleArray = {1,8,5,4,9,-12,34,21,1,3,4,65};
+        int[] sampleArray = {1,8,5,4,9,-12,34,21,0,3,4,65};
         difference = returnDifference(sampleArray);
-        System.out.println("The difference between the largest and smallest value of the Array is: ");
-        System.out.print(difference);
+        System.out.println("The difference between the largest and smallest value of the Array is: " + difference);
+
+        // TASK TWO
+        printTwoSmallest(sampleArray);
+
+    }
+
+    private static void printTwoSmallest(int[] sampleArray) {
+        int min1 = sampleArray[0];
+        int min2 = sampleArray[1];
+        //MODO LOOP
+        for (int i = 0; i < sampleArray.length; i++) {
+            if(sampleArray[i]<min1){ // SMALLER THAN THE SMALLEST, MUST SHIFT BOTH
+                min2 = min1;
+                min1 = sampleArray[i];
+            }else if(sampleArray[i]<min2){ // SMALLER THAN SECOND SMALLEST, JUST SWITCH
+                min2 = sampleArray[i];
+            }
+        }
+
+        /*MODO SORT
+        Arrays.sort(sampleArray);
+        min1 = sampleArray[0];
+        min2 = sampleArray[1];
+        */
+        System.out.println("The smallest element is: "+ min1 +" and the second smallest element is: "+ min2);
 
     }
 
