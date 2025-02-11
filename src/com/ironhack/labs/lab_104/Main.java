@@ -13,6 +13,19 @@ public class Main {
         // TASK TWO
         printTwoSmallest(sampleArray);
 
+        // TASK THREE
+        int x = 25;
+        int y = 13;
+        double res = 0;
+        res = calculateMathematicalExpression(x,y);
+        System.out.println("The result of the Mathematical Expression when x="+x+" and y="+y+" is equal to: "+res);
+
+    }
+
+    private static double calculateMathematicalExpression(int x, int y) {
+        double res = 0;
+        res = Math.pow(x,2)+Math.pow((4*(double)y/5) - (double)x,2);
+        return res;
     }
 
     private static void printTwoSmallest(int[] sampleArray) {
